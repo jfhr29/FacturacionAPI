@@ -8,7 +8,7 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class ClienteDTO {
-    private int id;
+    private Long id;
     private int tipoDocumento; // 13 DUI 36 NIT 37 OTRO
     private String numDocumento;// sin guiones
     private String nrc;//sin guiones
@@ -20,9 +20,6 @@ public class ClienteDTO {
     private boolean granContribuyente;
     private String complementoDireccion;
     private boolean activo; // soft delete
-    private int municipio_id;
-    private int actividadEconomica_id;
-    // DATOS PARA ACTIVIDAD ECONOMICA NUEVA.
-    private String Codigo;
-    private String Descripcion;
+    private Long municipio_id;
+    private Long actividadEconomica_id;
 }

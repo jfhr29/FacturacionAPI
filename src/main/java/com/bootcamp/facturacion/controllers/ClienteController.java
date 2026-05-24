@@ -1,5 +1,6 @@
 package com.bootcamp.facturacion.controllers;
 
+import com.bootcamp.facturacion.dto.ClienteDTO;
 import com.bootcamp.facturacion.models.Cliente;
 import com.bootcamp.facturacion.services.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,7 @@ public class ClienteController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Cliente guardar(@RequestBody Cliente cliente){
+    public Cliente guardar(@RequestBody ClienteDTO cliente){
         return servicio.guardar(cliente);
     }
 
@@ -44,7 +45,7 @@ public class ClienteController {
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Cliente actualizar(@PathVariable Long id, @RequestBody Cliente cliente) {
+    public Cliente actualizar(@PathVariable Long id, @RequestBody ClienteDTO cliente) {
         cliente.setId(id);
         return servicio.actualizar(cliente);
     }
